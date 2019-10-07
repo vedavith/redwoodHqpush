@@ -1,0 +1,79 @@
+<section class="container-fluid machineLoader" id="machineLoader"><br>
+    <table class="table table-bordered tables" id="tables" style="width:100%;">
+        <thead align="center">
+            <tr align="left">
+                <th colspan="8">
+                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addMachine"><i class="fas fa-plus-circle"></i> Add Machines </button>
+                </th>
+            </tr>
+            <tr>
+                <th>Hostname/IP</th>
+                <th>Port</th>
+                <th>VNC Port</th>
+                <th>Max Threads</th>
+                <th>Tags</th>
+                <th>Roles</th>
+                <th>Description</th>
+                <th rowspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="machineData" align="center"></tbody>
+    </table>
+
+    <div class="modal fade" id="addMachine">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                   <div class="row">
+                       <div class="col-md-4"> <b><label> Host name/ IP </label></b> </div>
+                       <div class="col-md-8"><input type="text" class="form-control hostname" name="hostname" id="hostname"></div>
+                   </div><br>
+                   <div class="row">
+                        <div class="col-md-4"> <b> <label> Port </label> </b> </div>
+                        <div class="col-md-8"><input type="text" class="form-control port" name="port" id="port" value="5009"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-4"> <b> <label> VNC Port </label> </b> </div>
+                        <div class="col-md-8"><input type="text" class="form-control vncport" name="vncport" id="vncport" value="3006"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-4"> <b> <label> Max Threads </label> </b> </div>
+                        <div class="col-md-8"><input type="number" class="form-control maxthreads" name="maxthreads" id="maxthreads" min="0"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-4"> <b> <label> Tags </label> </b> </div>
+                        <div class="col-md-8"><input type="text" class="form-control tags" name="tags" id="tags"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-4"> <b> <label> Roles </label> </b> </div>
+                        <div class="col-md-8"><input type="text" class="form-control roles" name="roles" id="roles"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-4"> <b> <label> Description </label> </b> </div>
+                        <div class="col-md-8"><textarea class="form-control description" name="description" id="description" cols="5" rows="2"></textarea></div>
+                    </div>
+                </div> 
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="container row InsertDataDiv">
+                        <div class="col-md-6" align = "right">
+                            <button type="button" class="btn btn-sm btn-success addHost" id="addHost"> Create </button>
+                        </div>
+                        <div class="col-md-6" align = "left">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"> Close </button>
+                        </div>
+                    </div>
+                    <div class="container row UpdateDataDiv">
+                        <div class="col-md-6" align = "right">
+                            <button type="button" class="btn btn-sm btn-warning updateHost" id="updateHost"> Update </button>
+                        </div>
+                        <div class="col-md-6" align = "left">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"> Close </button>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

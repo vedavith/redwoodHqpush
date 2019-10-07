@@ -1,0 +1,12 @@
+.container-fluid
+{
+    background-image: url("https://c1.sfdcstatic.com/content/dam/web/en_au/www/images/loginpromo/login_pardot_img.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 650px;
+}
+
+.label
+{
+    font-size: 12px;
+}

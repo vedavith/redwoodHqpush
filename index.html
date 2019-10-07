@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RedwoodHQ</title>
+    <!-- 
+    <link rel="stylesheet" type="text/css" href="stylesheets/redwoodtheme/resources/css/azzurra/azzurra-core.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/redwoodtheme/resources/css/azzurra/azzurra-ui-all.css"> -->
+
+    <script type="text/javascript" src="javascripts/jquery/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="stylesheets/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- DATA TABLES -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <!-- Latest compiled and minified Locales -->
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+
+    <script src="extjs/ext-all-debug.js"></script>
+    <script src="javascripts/socket.io/socket-io-min.js"></script>
+    <script type="text/javascript" src="javascripts/home/script.js"></script>
+
+
+    <script>
+        Ext.Loader.setConfig({
+            enabled: true
+        });        
+    </script>
+    <script type="text/javascript" src="app.js"> </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="http://www.redwoodhq.com" target="blank">
+            <img border="0" width="80" height="auto" style="margin:0 auto;" src="../images/rwhq.png"
+                alt="RedwoodHQ logo">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <!-- <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li> -->
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <select name="project" id="project" class="form-control mr-sm-2 project" aria-label="Select Project">
+                    <!-- <option>Choose Project</option> -->
+                    <option>Sample</option>
+                </select>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">admin</a>
+                <div class="dropdown-menu" id="amdindrop">
+                    <button type="button" class="dropdown-item btn btn-sm sshlink" data-toggle="modal"
+                        data-target="#sshview"> SSH </button>
+                    <button type="button" class="dropdown-item btn btn-sm logout"> Logout </button>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <nav>
+        <ul class="nav nav-tabs" id="headerTabs" role="tablist">
+
+            <li class="nav-item">
+                <a class="nav-link active execution" data-toggle="tab" href="#home">Execution</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link testcases" data-toggle="tab" href="#menu1"> Test Cases</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link actions" data-toggle="tab" href="#menu2">Actions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link scripts" data-toggle="tab" href="#menu2">Scripts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link settings" data-toggle="tab" href="#menu2">Settings</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- The Modal For SSH keys -->
+
+    <div class="modal fade" id="sshview">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <p> SSH Key : </p><br>
+                    <textarea class="form-control sshkey" name="sshkey" id="sshkey" cols="30" rows="7"></textarea>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="container row">
+                        <div class="col-md-6" align="right">
+                            <button type="button" class="btn btn-sm btn-success enablessh"> Enable Remote Repo</button>
+                        </div>
+                        <div class="col-md-6" align="left">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"> Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid pageAppender" id="pageAppender"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<section class="container-fluid machineLoader" id="projects"><br>
+    <table class="table table-bordered tables" id="tables" style="width:100%;">
+        <thead align="center">
+            <tr align="left">
+                <th colspan="8">
+                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                        data-target="#addProjects"><i class="fas fa-plus-circle"></i> Add Projects </button>
+                </th>
+            </tr>
+            <tr>
+                <th>Project Name</th>
+                <th colspan="2">Actions</th>
+
+            </tr>
+        </thead>
+        <tbody id="machineData" align="center"></tbody>
+    </table>
+
+    <div class="modal fade" id="addProjects">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4"> <b><label> Project Name</label></b> </div>
+                        <div class="col-md-8"><input type="text" class="form-control projectName" name="projectName"
+                                id="projectName"></div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-4"><b><label> Project Template</label></b> </div>
+                        <div class="col-md-8">
+                            <select id="projectTemplate" class="form-control">
+                                <option id="default">Default</option>
+                                <option id="javabasedselenium">Java Based Selenium</option>
+                            </select>  
+                        </div>      
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-8"><b><label> Use External Code Repository</label></b> </div>
+                        <div class="col-md-4"><input type="checkbox" class="form-control checkRepo" name="checkRepo"
+                            id="checkRepo" checked></div>
+                        
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-4"><b><label class="repoUrl"> External Repo URL</label></b> </div>
+                        <div class="col-md-8"><input type="text" class="form-control repoUrl url" name="repoUrl"
+                                id="repoUrl" ></div>
+                    </div><br>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="container row InsertDataDiv">
+                        <div class="col-md-6" align="right">
+                            <button type="button" class="btn btn-sm btn-success addProject" id="addProject"> Create
+                            </button>
+                        </div>
+                        <div class="col-md-6" align="left">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"> Close </button>
+                        </div>
+                    </div>
+                    <!-- <div class="container row UpdateDataDiv">
+                        <div class="col-md-6" align = "right">
+                            <button type="button" class="btn btn-sm btn-warning updateHost" id="updateHost"> Update </button>
+                        </div>
+                        <div class="col-md-6" align = "left">
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal"> Close </button>
+                        </div>
+                    </div>     -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
